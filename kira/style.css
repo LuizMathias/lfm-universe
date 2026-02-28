@@ -1,0 +1,154 @@
+:root {
+    --text-color: #ffffff;
+    --btn-bg: rgba(255, 255, 255, 0.08); /* Botão quase transparente */
+    --btn-hover: rgba(255, 255, 255, 0.15);
+    --accent-color: #a78bfa; /* Um roxo mais claro para combinar com o cosmos */
+    
+    /* Cores das Seções (Efeito Vidro) */
+    --card-bg: rgba(20, 20, 20, 0.6); 
+    --card-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem 1rem;
+    position: relative;
+    /* Substitua pelo nome da sua imagem */
+    background-image: url('fundo.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* O fundo fica parado enquanto rola a página */
+}
+
+/* Camada escura por cima da imagem para garantir leitura */
+.main-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Ajuste a opacidade (0.7) se precisar mais escuro */
+    z-index: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima da camada escura */
+}
+
+header {
+    margin-bottom: 1.0rem;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3); /* Brilho leve */
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.0rem;
+}
+
+/* Estilos para os grupos de idiomas com efeito Glassmorphism */
+.language-group {
+    background-color: var(--card-bg);
+    padding: 1.0rem 1.0rem;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    
+    /* Efeito de desfoque no fundo (funciona bem em iOS e Chrome moderno) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.group-title {
+    font-size: 1rem;
+    color: #e4e4e7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.story-title {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Botões Modernos e Vazados */
+.link-btn {
+    display: block;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.link-btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(167, 139, 250, 0.1);
+}
+
+/* Botão de Apoio - Mais destaque */
+.apoie-btn {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.apoie-btn:hover {
+    background-color: var(--accent-color);
+    color: #121212;
+}
+
+footer {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #888;
+}
